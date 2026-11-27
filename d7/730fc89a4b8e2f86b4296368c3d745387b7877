@@ -1,0 +1,151 @@
+.github/CODEOWNERS
+  s_8c24d69622a4ff::t_2334fba49f075a 1-11
+.github/ISSUE_TEMPLATE/config.yml
+  s_8c24d69622a4ff::t_f9b15116fa13c3 1-5
+.github/workflows/release.yml
+  s_f221aa64b90bf5::t_6d76574c689c94 1-334
+CODE_OF_CONDUCT.md
+  s_8c24d69622a4ff::t_0b5e7a372e3a9f 1-28
+CONTRIBUTING.md
+  s_8c24d69622a4ff::t_f7499b141348f9 1-38
+LICENSE
+  s_8c24d69622a4ff::t_dc2e17e373d9ab 1-21
+README.md
+  s_8c24d69622a4ff::t_2b9890de70a3a9 1-195
+README.zh-CN.md
+  s_8c24d69622a4ff::t_16d0b7859acff6 1-205
+SECURITY.md
+  s_8c24d69622a4ff::t_097a8c2756e8ec 1-18
+desktop/main.js
+  s_f221aa64b90bf5::t_48b1950e8964c4 1-300
+desktop/package.json
+  s_8c24d69622a4ff::t_89422e49e36524 1-74
+desktop/preload.js
+  s_f221aa64b90bf5::t_1117da23aa59aa 1-10
+docs/install/install-notes-template.txt
+  s_8c24d69622a4ff::t_bc5bb8379fb206 1-60
+docs/sitemap.xml
+  s_8c24d69622a4ff::t_ea6d6f232ffa42 1-7
+integrations/cursor-bridge/package.py
+  s_f221aa64b90bf5::t_b7d4118824283a 1-20
+script/build_and_run.sh
+  s_f221aa64b90bf5::t_ecbe41708efd87 1-17
+scripts/build.sh
+  s_f221aa64b90bf5::t_01f218835cf31d 1-42
+scripts/test-cursor-installer.sh
+  s_f221aa64b90bf5::t_1f52979f48fb0d 1-24
+src/CursorBridgeInstaller.swift
+  s_f221aa64b90bf5::t_d9bd86c4b544b9 1-74
+src/main.swift
+  s_8c24d69622a4ff::t_be40fdc1aa3b5d 1-1697
+tests/cursor_bridge_installer.swift
+  s_f221aa64b90bf5::t_1b85517c248de1 1-16
+tests/test_cursor_bridge_package.py
+  s_f221aa64b90bf5::t_b32bae4e9ac58e 1-30
+.github/ISSUE_TEMPLATE/bug_report.yml
+  s_8c24d69622a4ff::t_b21cc622244461 1-32
+.github/ISSUE_TEMPLATE/feature_request.yml
+  s_8c24d69622a4ff::t_c5ad8106e84a04 1-17
+.github/dependabot.yml
+  s_8c24d69622a4ff::t_2f73e368111e46 1-11
+.github/pull_request_template.md
+  s_8c24d69622a4ff::t_44a7d7c5c45519 1-30
+.github/workflows/backend.yml
+  s_8c24d69622a4ff::t_e7f772c1363eea 1-41
+.github/workflows/ci.yml
+  s_8c24d69622a4ff::t_331a1e67b059e4 1-55
+.github/workflows/codeql-swift.yml
+  s_8c24d69622a4ff::t_39fa3fb0129778 1-58
+.github/workflows/codeql.yml
+  s_8c24d69622a4ff::t_9086e96de73bd6 1-42
+.github/workflows/deploy-pages.yml
+  s_8c24d69622a4ff::t_c342bf1a8876fa 1-37
+.github/workflows/desktop.yml
+  s_8c24d69622a4ff::t_cf9677d6e7ce66 1-114
+.gitignore
+  s_8c24d69622a4ff::t_d7ae6cf2e8bb21 1-19
+CHANGELOG.md
+  s_8c24d69622a4ff::t_2ca61ffa3e9b2a 1-259
+desktop/.gitignore
+  s_8c24d69622a4ff::t_55b008bd8f0ee2 1-5
+desktop/build/icon.svg
+  s_8c24d69622a4ff::t_85a1461aaf5f18 1-13
+desktop/package-lock.json
+  s_8c24d69622a4ff::t_d5d47823dc98c3 1-3591
+desktop/scripts/build-backend.mjs
+  s_8c24d69622a4ff::t_dacebb58b570d6 1-54
+desktop/scripts/sync-resources.mjs
+  s_8c24d69622a4ff::t_ae4a70ff4f65c6 1-25
+desktop/test/main.test.js
+  s_8c24d69622a4ff::t_21c3c8ea503925 1-33
+docs/README.md
+  s_8c24d69622a4ff::t_bcf8cd5496cd57 1-36
+docs/_headers
+  s_8c24d69622a4ff::t_6bd4ed669afa81 1-15
+docs/api/tasks-v1.schema.json
+  s_8c24d69622a4ff::t_02ec121b8f1a65 1-210
+docs/dev/API-CONTRACT.zh-CN.md
+  s_8c24d69622a4ff::t_d953f584ea4ca0 1-152
+docs/dev/BUILD-RELEASE.zh-CN.md
+  s_8c24d69622a4ff::t_926d094a9c27cd 1-359
+docs/dev/STATUS-DETECTION.zh-CN.md
+  s_8c24d69622a4ff::t_2ba352dfa7f34a 1-119
+docs/index.html
+  s_8c24d69622a4ff::t_c13796b0f63de0 1-554
+docs/robots.txt
+  s_8c24d69622a4ff::t_ea419a1cd80031 1-4
+integrations/cursor-bridge/README.md
+  s_8c24d69622a4ff::t_56abe203641de7 1-35
+integrations/cursor-bridge/extension.js
+  s_8c24d69622a4ff::t_3b31069a7ce408 1-55
+integrations/cursor-bridge/package.json
+  s_8c24d69622a4ff::t_e3c36e75b4d56c 1-12
+integrations/cursor-bridge/test.cjs
+  s_8c24d69622a4ff::t_7d5c5ba4531533 1-15
+resources/Info.plist
+  s_8c24d69622a4ff::t_fb4c27a400e4ee 1-15
+resources/panel.html
+  s_8c24d69622a4ff::t_669cb884d7f40a 1-501
+src/platforms.py
+  s_8c24d69622a4ff::t_98607625908353 1-93
+src/server.py
+  s_8c24d69622a4ff::t_6e6bb47c1cfec4 1-2618
+tests/panel-ui.cjs
+  s_8c24d69622a4ff::t_5596a322e20b93 1-237
+tests/test_api_contract.py
+  s_8c24d69622a4ff::t_23f5bd37a83389 1-546
+tests/test_cursor_qoder_scan.py
+  s_8c24d69622a4ff::t_8172b0fa37569e 1-650
+tests/test_dsh_scan.py
+  s_8c24d69622a4ff::t_4b0190fbe7fbe9 1-71
+tests/test_platforms.py
+  s_8c24d69622a4ff::t_d86abd794c49c7 1-92
+tests/test_release_metadata.py
+  s_8c24d69622a4ff::t_1cfefe88bebb60 1-81
+tests/test_workbuddy_scan.py
+  s_8c24d69622a4ff::t_655cf75de22dac 1-228
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d7730fc89a4b8e2f86b4296368c3d745387b7877",
+  "prompts": {},
+  "sessions": {
+    "s_8c24d69622a4ff": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "ddb40039-3e4b-45b9-91a2-f8411169b251",
+        "model": "default"
+      },
+      "human_author": "liuyao5 <liuyao5@asiainfo-sec.com>"
+    },
+    "s_f221aa64b90bf5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1edd3-9bd7-7761-bd77-62979e617eb6",
+        "model": "mypay/gpt-6-astra"
+      },
+      "human_author": "liuyao5 <liuyao5@asiainfo-sec.com>"
+    }
+  }
+}
