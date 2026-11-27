@@ -1,0 +1,48 @@
+.github/CODEOWNERS
+  s_8c24d69622a4ff::t_a59389f9171caf 2,5-7,10-11
+CONTRIBUTING.md
+  s_8c24d69622a4ff::t_3f99dec241ca4f 8
+LICENSE
+  s_8c24d69622a4ff::t_6c5bf97b305a8e 3
+src/main.swift
+  s_8c24d69622a4ff::t_cbbcc0706f541e 632
+docs/install/install-notes-template.txt
+  s_8c24d69622a4ff::t_0a107273670a0b 29,58
+CODE_OF_CONDUCT.md
+  s_8c24d69622a4ff::t_8af84137d514d8 24
+SECURITY.md
+  s_8c24d69622a4ff::t_7cec47c24f36d5 11,13
+README.md
+  s_8c24d69622a4ff::t_138997f4e4b3ec 13-14,20,34,132,195
+.github/ISSUE_TEMPLATE/config.yml
+  s_8c24d69622a4ff::t_ef128791060586 4
+desktop/package.json
+  s_8c24d69622a4ff::t_8109ab14bf6346 7
+docs/sitemap.xml
+  s_8c24d69622a4ff::t_218f8d848095c1 4
+docs/index.html
+  s_8c24d69622a4ff::t_edb43993650f86 8,10,21-22,25-27,333,349,352,488,490-492
+  s_8c24d69622a4ff::t_f1078be05c5fef 47
+  s_8c24d69622a4ff::t_2dc99550cde5aa 36
+  s_8c24d69622a4ff::t_db1c21ba7cf93c 37
+docs/robots.txt
+  s_8c24d69622a4ff::t_600e46b6d6462d 4
+README.zh-CN.md
+  s_8c24d69622a4ff::t_8dcf4ed30c62ec 13-14,20,34,139,201
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4b33a76e29c1e34b45beb2f50323231df8681a4f",
+  "prompts": {},
+  "sessions": {
+    "s_8c24d69622a4ff": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "ddb40039-3e4b-45b9-91a2-f8411169b251",
+        "model": "default"
+      },
+      "human_author": "liuyao5 <liuyao5@asiainfo-sec.com>"
+    }
+  }
+}
