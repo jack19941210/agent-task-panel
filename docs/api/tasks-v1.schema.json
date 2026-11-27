@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentpanel.pages.dev/api/tasks-v1.schema.json",
+  "title": "AgentTaskPanel tasks response",
+  "type": "object",
+  "required": [
+    "api_version",
+    "tasks",
+    "finished",
+    "pin"
+  ],
+  "properties": {
+    "api_version": {
+      "const": 1
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/task"
+      }
+    },
+    "finished": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "task_id",
+          "agent",
+          "title"
+        ],
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{16}$"
+          },
+          "agent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "completed",
+              "blocked",
+              "failed"
+            ]
+          },
+          "recent": {
+            "type": "string",
+            "description": "最近进展摘要，供完成弹卡展示"
+          },
+          "reply_text": {
+            "type": "string",
+            "description": "可读取的本轮助手回复正文，保留换行"
+          },
+          "handoff": {
+            "$ref": "#/$defs/handoff"
+          },
+          "cwd": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "pin": {
+      "type": "boolean"
+    },
+    "heartbeats": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "notifications": {
+      "type": "object",
+      "properties": {
+        "completed": {
+          "type": "boolean"
+        },
+        "blocked": {
+          "type": "boolean"
+        },
+        "failed": {
+          "type": "boolean"
+        },
+        "heartbeat": {
+          "type": "boolean"
+        },
+        "summary": {
+          "type": "boolean"
+        },
+        "focus": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "handoff": {
+      "type": "object",
+      "properties": {
+        "changes": {"type": "string"},
+        "verification": {"type": "string"},
+        "next_step": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "task_id",
+        "agent",
+        "title",
+        "cwd",
+        "status",
+        "mtime",
+        "link",
+        "recent",
+        "recent_at"
+      ],
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{16}$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "full_title": {
+          "type": "string",
+          "description": "用户原始任务描述，保留长文本；显示标题可截断"
+        },
+        "user_prompt": {
+          "type": "string",
+          "description": "本回合用户原始输入，不是 Agent 翻译后的摘要"
+        },
+        "turn_key": {
+          "type": "string",
+          "description": "渠道内回合标识；同一会话的不同用户输入使用不同值"
+        },
+        "cwd": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "running",
+            "done",
+            "idle",
+            "failed"
+          ]
+        },
+        "mtime": {
+          "type": "number",
+          "minimum": 0
+        },
+        "link": {
+          "type": "string"
+        },
+        "recent": {
+          "type": "string"
+        },
+        "recent_at": {
+          "type": "string"
+        },
+        "reply_text": {
+          "type": "string"
+        },
+        "reply_needed": {
+          "type": "string",
+          "description": "回合已结束，但助手在回复中明确要求用户答复后再继续；不代表工具审批"
+        },
+        "handoff": {
+          "$ref": "#/$defs/handoff"
+        },
+        "display_status": {
+          "enum": [
+            "running",
+            "done",
+            "waiting",
+            "failed",
+            "idle",
+            "unknown",
+            "online"
+          ]
+        },
+        "status_reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

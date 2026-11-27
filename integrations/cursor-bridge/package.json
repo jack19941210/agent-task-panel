@@ -1,0 +1,12 @@
+{
+  "name": "agent-panel-bridge",
+  "displayName": "Agent Task Panel Bridge",
+  "description": "Open the selected local Cursor conversation in its matching IDE workspace.",
+  "publisher": "agent-task-panel",
+  "version": "0.2.6",
+  "engines": {"vscode": "^1.85.0"},
+  "main": "./extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "extensionKind": ["ui"],
+  "capabilities": {"untrustedWorkspaces": {"supported": false}}
+}

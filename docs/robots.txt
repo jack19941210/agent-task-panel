@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raw.githubusercontent.com/jack19941210/agent-task-panel/main/docs/sitemap.xml

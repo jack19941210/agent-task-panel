@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build app
+        run: zsh scripts/build.sh
+
+      - name: Verify app bundle
+        run: |
+          test -d AgentTaskPanel.app/Contents/MacOS
+          test -f AgentTaskPanel.app/Contents/Resources/agent-panel-bridge.vsix
+          test -f AgentTaskPanel.app/Contents/Resources/cursor-bridge-package.json
+          test -f AgentTaskPanel.app/Contents/Resources/server.py
+          test -f AgentTaskPanel.app/Contents/Resources/platforms.py
+          test -f AgentTaskPanel.app/Contents/Resources/agent-task-dashboard.html
+          codesign --verify --deep AgentTaskPanel.app
+
+      - name: Verify universal binary and minimum macOS
+        run: |
+          BIN=AgentTaskPanel.app/Contents/MacOS/AgentTaskPanel
+          lipo -archs "$BIN"
+          lipo -archs "$BIN" | grep -q arm64
+          lipo -archs "$BIN" | grep -q x86_64
+          xcrun vtool -show-build "$BIN" | grep -q "minos 12.0"
+
+      - name: Python contract tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Python syntax check
+        run: python3 -m py_compile src/server.py
+
+  workbuddy-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: WorkBuddy path and scanner tests
+        run: |
+          python -m unittest discover -s tests -p "test_platforms.py" -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -p "test_workbuddy_scan.py" -v

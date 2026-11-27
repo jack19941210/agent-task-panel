@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');
+const Module=require('node:module');
+const old=Module._load;
+Module._load=function(id,...args){return id==='vscode'?{}:old.call(this,id,...args)};
+const {matches}=require('./extension');
+Module._load=old;
+const request={requestID:'11111111-1111-4111-8111-111111111111',id:'22222222-2222-4222-8222-222222222222',cwd:'/work/shop',created:100};
+assert.equal(matches(request,['/work/shop'],101),true);
+assert.equal(matches(request,['/work/other'],101),false);
+assert.equal(matches(request,['/work/shop'],131),false);
+assert.equal(matches({...request,id:'arbitrary command'},['/work/shop'],101),false);
+assert.equal(matches({...request,cwd:'relative'},['relative'],101),false);
+const noProject = {...request,cwd:''};
+assert.equal(matches(noProject,[],101),false,'sessions without a project do not use the bridge');
+console.log('PASS bridge workspace, expiry and ID validation');

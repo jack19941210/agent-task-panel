@@ -1,0 +1,16 @@
+import Foundation
+let base = URL(fileURLWithPath: CommandLine.arguments[1])
+let cli = base.appendingPathComponent("cursor")
+let resources = base.appendingPathComponent("resources")
+func check(_ condition: Bool, _ name: String) { if !condition { fatalError(name) }; print("PASS \(name)") }
+check(CursorBridgeInstaller.ensureInstalled(cli: cli, resources: resources) == nil, "fresh install")
+let log = base.appendingPathComponent("calls")
+let first = try String(contentsOf: log, encoding: .utf8)
+check(first.contains("--install-extension"), "missing bridge installs bundled VSIX")
+check(CursorBridgeInstaller.ensureInstalled(cli: cli, resources: resources) == nil, "existing installation")
+let second = try String(contentsOf: log, encoding: .utf8)
+check(second.components(separatedBy: "--install-extension").count == 2, "does not reinstall current version")
+try "0.0.1".write(to: base.appendingPathComponent("version"), atomically: true, encoding: .utf8)
+check(CursorBridgeInstaller.ensureInstalled(cli: cli, resources: resources) == nil, "outdated version upgrades")
+try FileManager.default.removeItem(at: resources.appendingPathComponent("agent-panel-bridge.vsix"))
+check(CursorBridgeInstaller.ensureInstalled(cli: cli, resources: resources) != nil, "missing bundled resource fails clearly")
